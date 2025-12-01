@@ -2,6 +2,8 @@
 setlocal enabledelayedexpansion
 cd /d %TEMP%
 
+REM TODO Make a displayable helptext
+
 REM User configurable settings
 REM TODO: Make these configurable via parameters
 set lockTimeoutSeconds=10

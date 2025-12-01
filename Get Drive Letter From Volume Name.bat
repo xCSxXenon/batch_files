@@ -1,14 +1,14 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM TODO Make this all displayable helptext
 REM A script that takes an input volume name and returns its drive letter.
-REM No warranty expressed or implied, use at your own risk.
-
 REM Usage: Call script with a volume name as a quoted parameter. Ex: GetDriveLetterFromVolumeName.bat "USB drive"
-REM Add a second paramter "detailed" if you want more than just a letter returned.
+REM Add a second paramter "detailed" if you want the output to be: "%volumeName%" has assigned letter: %volumeLetter%.
 
 REM LIMITATIONS
-REM This only searches using the first 11 characters. If multiple volume names share the first 11 characters, this is unreliable.
+REM This only searches using the first 11 characters. If multiple volume names share the first 11 characters, this is untested.
+REM WMIC can be used as the "backbone" for this, but it is both deprecated and breaks way more often than Diskpart, so I didn't.
 REM If the search string contains extra spaces at the end, or vice versa, it still matches. Feature?
 REM Only works on local storage.
 

@@ -1,7 +1,7 @@
 A collection of batch scripts I wrote to automate and simplify my workflows. Written and maintained by me unless specified otherwise.
   
   \
-"[File Selector Template.bat](./File%20Selector%20Template.bat)" opens a file browsing window so you can select a file. It then displays some details about the selected file. Useful for selecting a file for processing graphically instead of CLI. Main functional code found somewhere else. Output/formatting by me.
+"[File Selector Template.bat](./File%20Selector%20Template.bat)" opens a file browsing window so you can select a file. It then displays some details about the selected file. Useful for selecting a file for processing graphically instead of CLI. Main functional code found [here](https://stackoverflow.com/questions/15885132/file-folder-chooser-dialog-from-a-windows-batch-script). Output/formatting by me.
 
 "[Get Drive Letter From Volume Name.bat](Get%20Drive%20Letter%20From%20Volume%20Name.bat)" takes a volume name as argument and echos its drive letter. Code included and used in
 "[Lock BitLocked Volume.bat](./Lock%20BitLocked%20Volume.bat)".

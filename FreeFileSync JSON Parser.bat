@@ -106,12 +106,20 @@ REM Remove time offset, format for 12-hour format, and add am/pm, if requested
 IF "%formatTime%"=="false" goto DisplayResults
 set AMorPM=AM
 set startTime=%startTime:~0,8%
-IF %startTime:~0,2% GTR 12 (
-    set /A startHour=%startTime:~0,2%-12
-    set AMorPM=PM
-    set startTime=!startHour!%startTime:~2,6%
+IF %startTime:~0,1% EQU 0 (
+    set /A startHour=%startTime:~1,1%
+) ELSE (
+    set /A startHour=%startTime:~0,2%
 )
-IF %startTime:~0,2% LSS 10 set startTime=%startTime:~1%
+IF %startHour% EQU 12 (
+    set AMorPM=PM
+) ELSE IF %startHour% EQU 00 (
+    set startHour=12
+) ELSE IF %startHour% GTR 12 (
+    set /A startHour-=12
+    set AMorPM=PM
+)
+set startTime=!startHour!%startTime:~2,6%
 set startTime=%startTime% %AMorPM%
 goto DisplayResults
 

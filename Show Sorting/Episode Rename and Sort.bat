@@ -16,6 +16,7 @@ set currentSeasonPath=%showPath%\%year%
 REM Set text to prepend to the phone copy made during the 'Process' stage
 set prepend=Podcast
 IF "%series%"=="Regulation Gameplay" set prepend=%series%
+IF "%series%"=="Advent Calendar" set prepend=%series%
 
 
 :CurrentSeasonCheck

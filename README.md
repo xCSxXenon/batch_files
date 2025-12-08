@@ -13,6 +13,8 @@ A collection of batch scripts I wrote to automate and simplify my workflows. Wri
 
 "[Find IPv4.bat](./Find%20IPv4.bat)" finds internal/LAN ipv4 addresses present in the system.
 
+"[FreeFileSync JSON Parser.bat](./FreeFileSync%20JSON%20Parser.bat)" takes a [FreeFileSync](https://freefilesync.org) batch configuration as an argument and parses its JSON results natively in CMD, plus a temporary external file. Official documentation uses PowerShell but I prefer CMD for its speed and lightweight-ness. It was also stated that "Windows batch scripts (.cmd/.bat) cannot parse JSON" and I am simply too stubborn not to look for a workaround. "-h" displays usage information.
+
 "[Get Drive Letter From Volume Name.bat](Get%20Drive%20Letter%20From%20Volume%20Name.bat)" takes a volume name as argument and echos its drive letter. Code included and used in
 "Get OEM Key.bat" displays the OEM Windows activation key embedded in the ACPI of the system. Usually nothing for custom builds, but super valuable for recovering keys on pre-builts and laptops.
 

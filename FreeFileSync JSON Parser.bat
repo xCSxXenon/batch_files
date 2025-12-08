@@ -73,7 +73,6 @@ for /f "tokens=1,* delims=:" %%a in (jsonResults.log) do (
             set statValue=!statValue:~1!
             set statValue=!statValue:"=!
             set statValue=!statValue:,=!
-            REM set statValue=!statValue:\\=\!
             set !statName!=!statValue!
         )
     ) 

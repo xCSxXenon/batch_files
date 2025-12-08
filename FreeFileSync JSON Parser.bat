@@ -73,7 +73,7 @@ for /f "tokens=1,* delims=:" %%a in (jsonResults.log) do (
             set statValue=!statValue:~1!
             set statValue=!statValue:"=!
             set statValue=!statValue:,=!
-            set !statName!=!statValue!
+            set ffs_!statName!=!statValue!
         )
     ) 
 )
@@ -93,11 +93,11 @@ rd /s /q "%TEMP%\FreeFileSyncJSONParsing"
 goto ExpandTimestamp
 
 :ExpandTimestamp
-REM Split date and time inside %startTime% into separate %startDate% and %startTime% variables, if requested
+REM Split date and time inside %ffs_startTime% into separate %ffs_startDate% and %ffs_startTime% variables, if requested
 IF "%expandDateTime%"=="false" goto DisplayResults
-FOR /f "tokens=1,2 delims=T" %%a in ("%startTime%") do (
-    set startDate=%%a
-    set startTime=%%b
+FOR /f "tokens=1,2 delims=T" %%a in ("%ffs_startTime%") do (
+    set ffs_startDate=%%a
+    set ffs_startTime=%%b
 )
 goto CleanupTime
 
@@ -105,36 +105,36 @@ goto CleanupTime
 REM Remove time offset, format for 12-hour format, and add am/pm, if requested
 IF "%formatTime%"=="false" goto DisplayResults
 set AMorPM=AM
-set startTime=%startTime:~0,8%
-IF %startTime:~0,1% EQU 0 (
-    set /A startHour=%startTime:~1,1%
+set ffs_startTime=%ffs_startTime:~0,8%
+IF %ffs_startTime:~0,1% EQU 0 (
+    set /A startHour=%ffs_startTime:~1,1%
 ) ELSE (
-    set /A startHour=%startTime:~0,2%
+    set /A startHour=%ffs_startTime:~0,2%
 )
 IF %startHour% EQU 12 (
     set AMorPM=PM
-) ELSE IF %startHour% EQU 00 (
+) ELSE IF %startHour% EQU 0 (
     set startHour=12
 ) ELSE IF %startHour% GTR 12 (
     set /A startHour-=12
     set AMorPM=PM
 )
-set startTime=!startHour!%startTime:~2,6%
-set startTime=%startTime% %AMorPM%
+set ffs_startTime=!startHour!%ffs_startTime:~2,6%
+set ffs_startTime=%ffs_startTime% %AMorPM%
 goto DisplayResults
 
 :DisplayResults
-echo syncResult:     %syncResult%
-IF "%expandDateTime%"=="true" (echo startDate:      %startDate%) else (echo startTime:      %startTime%)
-IF "%expandDateTime%"=="true" echo startTime:      %startTime%
-echo totalTimeSec:   %totalTimeSec%
-echo errors:         %errors%
-echo warnings:       %warnings%
-echo totalItems:     %totalItems%
-echo totalBytes:     %totalBytes%
-echo processedItems: %processedItems%
-echo processedBytes: %processedBytes%
-echo logFile:        "%logFile%"
+echo syncResult:     %ffs_syncResult%
+IF "%expandDateTime%"=="true" (echo startDate:      %ffs_startDate%) else (echo startTime:      %ffs_startTime%)
+IF "%expandDateTime%"=="true" echo startTime:      %ffs_startTime%
+echo totalTimeSec:   %ffs_totalTimeSec%
+echo errors:         %ffs_errors%
+echo warnings:       %ffs_warnings%
+echo totalItems:     %ffs_totalItems%
+echo totalBytes:     %ffs_totalBytes%
+echo processedItems: %ffs_processedItems%
+echo processedBytes: %ffs_processedBytes%
+echo logFile:        "%ffs_logFile%"
 
 :Quit
 exit /b

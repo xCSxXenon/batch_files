@@ -53,12 +53,9 @@ goto Quit
 
 :CreateWorkingDirectory
 REM Creates unique working directory in %TEMP% to avoid race conditions
-set parsingTimestamp=%date:~4%%time:~0,8%
-set parsingTimestamp=%parsingTimestamp: =0%
-set parsingTimestamp=%parsingTimestamp:/=%
-set parsingTimestamp=%parsingTimestamp::=%
-mkdir %TEMP%\FreeFileSyncJSONParsing\%parsingTimestamp%
-pushd %TEMP%\FreeFileSyncJSONParsing\%parsingTimestamp%
+set parsingSubdirectory=%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%
+mkdir %TEMP%\FreeFileSyncJSONParsing\%parsingSubdirectory%
+pushd %TEMP%\FreeFileSyncJSONParsing\%parsingSubdirectory%
 goto RunAndProcessJSON
 
 :RunAndProcessJSON
@@ -73,10 +70,10 @@ for /f "tokens=1,* delims=:" %%a in (jsonResults.log) do (
             set statName=!statName: =!
             set statName=!statName:"=!
             set "statValue=%%b"
-            set statValue=!statValue: =!
+            set statValue=!statValue:~1!
             set statValue=!statValue:"=!
             set statValue=!statValue:,=!
-            set statValue=!statValue:\\=\!
+            REM set statValue=!statValue:\\=\!
             set !statName!=!statValue!
         )
     ) 
@@ -87,7 +84,7 @@ goto CleanupWorkingDirectory
 :CleanupWorkingDirectory
 REM Remove working directory, if requested
 IF "%cleanupWorkingDirectory%"=="false" goto CheckIfEmpty
-rd /s /q "%TEMP%\FreeFileSyncJSONParsing\%parsingTimestamp%"
+rd /s /q "%TEMP%\FreeFileSyncJSONParsing\%parsingSubdirectory%"
 goto CheckIfEmpty
 
 :CheckIfEmpty
@@ -130,8 +127,7 @@ echo totalItems:     %totalItems%
 echo totalBytes:     %totalBytes%
 echo processedItems: %processedItems%
 echo processedBytes: %processedBytes%
-echo logFile:        %logFile%
+echo logFile:        "%logFile%"
 
 :Quit
-popd
 exit /b

@@ -92,4 +92,4 @@ goto Quit
 
 :Quit
 del volumes.txt
-exit
+exit /b

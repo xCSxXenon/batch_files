@@ -1,6 +1,8 @@
 A collection of batch scripts I wrote to automate and simplify my workflows. Written and maintained by me unless specified otherwise.
 
   \
+"[CMDlets](./CMDlets/)" contains scripts that act as CMDlets. The directory is added to my PATH nvironment variable so I can run them from anywhere via CMD.
+
 "[Show Sorting](./Show%20Sorting/)" contains scripts I use for renaming and sorting episodic-style releases from independent creators.
 
 "[USB Setup](./USB%20Setup/)" contains scripts for formatting external storage devices.

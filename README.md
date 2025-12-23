@@ -15,10 +15,9 @@ A collection of batch scripts I wrote to automate and simplify my workflows. Wri
 
 "[FreeFileSync JSON Parser.bat](./FreeFileSync%20JSON%20Parser.bat)" takes a [FreeFileSync](https://freefilesync.org) batch configuration as an argument and parses its JSON results natively in CMD, plus a temporary external file. Official documentation uses PowerShell but I prefer CMD for its speed and lightweight-ness. It was also stated that "Windows batch scripts (.cmd/.bat) cannot parse JSON" and I am simply too stubborn not to look for a workaround. "-h" displays usage information.
 
-"[Get Drive Letter From Volume Name.bat](Get%20Drive%20Letter%20From%20Volume%20Name.bat)" takes a volume name as argument and echos its drive letter. Code included and used in
-"Get OEM Key.bat" displays the OEM Windows activation key embedded in the ACPI of the system. Usually nothing for custom builds, but super valuable for recovering keys on pre-builts and laptops.
+"[Get Drive Letter From Volume Name.bat](Get%20Drive%20Letter%20From%20Volume%20Name.bat)" takes a volume name as argument and echos its drive letter. Code included and used in"[Lock BitLocked Volume.bat](./Lock%20BitLocked%20Volume.bat)".
 
-"[Lock BitLocked Volume.bat](./Lock%20BitLocked%20Volume.bat)".
+"[Get OEM Key.bat](./Get%20OEM%20Key.bat)" displays the OEM Windows activation key embedded in the ACPI of the system. Usually nothing for custom builds, but super valuable for recovering keys on pre-builts and laptops.
 
 "[Lock BitLocked Volume.bat](Lock%20BitLocked%20Volume.bat)" takes a volume name as a argument and locks it. I use it to leave a process running and have it lock when finished.
 

@@ -10,7 +10,7 @@ IF "%~1"=="-s" goto Status
 
 
 :PrintHelp
-echo Usage: githelper.bat [-h ^| -a ^<file/dir^> ^| -c ^<message^> ^| -pl ^| -ps]
+echo Usage: %0 [-h ^| -a ^<file/dir^> ^| -c ^<message^> ^| -pl ^| -ps]
 echo.
 echo             -h    Displays this help text
 echo             -a    Adds/stages file or directory

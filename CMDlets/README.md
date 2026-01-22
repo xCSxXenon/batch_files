@@ -7,5 +7,5 @@ Self-made CMDlets that I created to use from a CMD prompt. The parent directory 
 
 "[pop.bat](pop.bat)" and "[push.bat](push.bat)" are 'aliases' for popd and pushd because I don't want to enter an extra 'd' every time.
 
-"SortFilesbyExtension[.bat](push.bat)" sorts files in the current directory into subdirectories by extension.
+"[SortFilesbyExtension.bat](./SortFilesbyExtension.bat)" sorts files in the current directory into subdirectories by extension.
 

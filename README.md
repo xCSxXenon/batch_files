@@ -1,6 +1,6 @@
 A collection of batch scripts I wrote to automate and simplify my workflows. Written and maintained by me unless specified otherwise.
 
-  \
+&nbsp; 
 "[CMDlets](./CMDlets/)" contains scripts that act as CMDlets. The directory is added to my PATH nvironment variable so I can run them from anywhere via CMD.
 
 "[Show Sorting](./Show%20Sorting/)" contains scripts I use for renaming and sorting episodic-style releases from independent creators.
@@ -10,6 +10,11 @@ A collection of batch scripts I wrote to automate and simplify my workflows. Wri
 "[7zip, NanaZip, LibreOffice, VLC Installer.bat](./7zip,%20NanaZip,%20LibreOffice,%20VLC%20Installer.bat)" is a standalone script that allows you to install/uninstall the listed programs. It detects Windows 10 or 11 and queues 7zip for 10 and NanaZip for 11, removes the other. Uses WinGet for installation.
 
 "[BitLocker Decryption with Progress Bar.bat](BitLocker%20Decryption%20with%20Progress%20Bar.bat)" makes it easy to glance at a screen to check decryption progress without having to move across a room. It asks for a volume letter, decrypts it while showing a big yellow progress bar, then displays a green success message when finished.
+
+"[Delete Excluded Data.bat](Delete%20Excluded%20Data.bat)" solves an issue for some users of [FreeFileSync](https://freefilesync.org) where excluding items from a sync doesn't retroactively delete that data from a backup. It is decided that excluding data excludes it from **ALL** actions, including deletions that would achieve this. User "switch" made a [bash script](https://freefilesync.org/forum/viewtopic.php?p=50056#p50035) and that is where I got the inspiration to create this *batch* script. Provide no parameters for usage info. Provide a FFS configuration file to process it.
+> [!CAUTION]
+> Provided .ffs_batch configurations **GET RAN AUTOMATICALLY**
+> .ffs_GUI configurations get queued up in the GUI
 
 "[File Selector Template.bat](./File%20Selector%20Template.bat)" opens a file browsing window so you can select a file. It then displays some details about the selected file. Useful for selecting a file for processing graphically instead of CLI. Main functional code found [here](https://stackoverflow.com/questions/15885132/file-folder-chooser-dialog-from-a-windows-batch-script). Output/formatting by me.
 
@@ -24,3 +29,4 @@ A collection of batch scripts I wrote to automate and simplify my workflows. Wri
 "[Lock BitLocked Volume.bat](Lock%20BitLocked%20Volume.bat)" takes a volume name as a argument and locks it. I use it to leave a process running and have it lock when finished.
 
 "[Swap Drive Letters.bat](./Swap%20Drive%20Letters.bat)" takes two volume letters from the user and swaps them. Can also be used on a single volume by selecting a free letter for one of the prompts, simply changing the letter instead of swapping with another volume.
+

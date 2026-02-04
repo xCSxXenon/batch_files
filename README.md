@@ -14,6 +14,7 @@ A collection of batch scripts I wrote to automate and simplify my workflows. Wri
 "[Delete Excluded Data.bat](Delete%20Excluded%20Data.bat)" solves an issue for some users of [FreeFileSync](https://freefilesync.org) where excluding items from a sync doesn't retroactively delete that data from a backup. It is decided that excluding data excludes it from **ALL** actions, including deletions that would achieve this. User "switch" made a [bash script](https://freefilesync.org/forum/viewtopic.php?p=50056#p50035) and that is where I got the inspiration to create this *batch* script. Provide no parameters for usage info. Provide a FFS configuration file to process it.
 > [!CAUTION]
 > Provided .ffs_batch configurations **GET RAN AUTOMATICALLY**
+>
 > .ffs_GUI configurations get queued up in the GUI
 
 "[File Selector Template.bat](./File%20Selector%20Template.bat)" opens a file browsing window so you can select a file. It then displays some details about the selected file. Useful for selecting a file for processing graphically instead of CLI. Main functional code found [here](https://stackoverflow.com/questions/15885132/file-folder-chooser-dialog-from-a-windows-batch-script). Output/formatting by me.

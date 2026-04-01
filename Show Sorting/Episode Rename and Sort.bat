@@ -49,7 +49,7 @@ REM Show exists but it's a new year/season. Detect last season #, increment by 1
 REM If %lastYear% starts with "Season", show is organized by "Season xx" instead of year. New seasons need to be created manually.
 REM Update %currentSeasonPath% with this directory, save its number for the new file, then go back to determine next episode number.
 set episodeNumber=01
-for /f "tokens=*" %%i in ('dir "%showPath%" /b/ad/on') do set lastYear=%%i
+for /f "tokens=*" %%i in ('dir "%showPath%" /b/ad/od') do set lastYear=%%i
 IF /I %lastYear:~0,6%==Season (
     set year=%lastYear%
     set currentSeasonPath=%showPath%\%lastYear%

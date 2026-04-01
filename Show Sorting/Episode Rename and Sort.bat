@@ -17,7 +17,7 @@ REM Set text to prepend to the phone copy made during the 'Process' stage
 set prepend=Podcast
 IF "%series%"=="Regulation Gameplay" set prepend=%series%
 IF "%series%"=="Advent Calendar" set prepend=%series%
-
+IF "%series%"=="Mario Party March" set prepend=%series%
 
 :CurrentSeasonCheck
 REM Checks if show has a season for the current year or has a local version
